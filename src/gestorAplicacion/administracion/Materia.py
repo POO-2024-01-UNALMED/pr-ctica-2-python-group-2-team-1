@@ -51,6 +51,7 @@ class Materia:
         else:
             return False
 
+    #Metodos utilizados para eliminar y agregar un grupo paso por paso
     def eliminarGrupo(self, numero):
         grupo = self._grupos[numero - 1]
         grupo.getProfesor().desvincularGrupo(grupo)
@@ -61,6 +62,44 @@ class Materia:
             grupoCamb = self.grupos[i]
             nGrupoAnt = grupoCamb.getNumero()
             grupoCamb.setNumero(nGrupoAnt - 1)
+            
+    def agregarGrupo(self, numero, profesor, horario, cupos, salon):
         
+        #El método recibe los parámetros necesarios para crear un nuevo grupo
+        dispSalon = True
+        dispProfesor = True
+        daMateria = profesor.daMateria(self._nombre)
+        
+        #Se comprueba la disponibilidad del profesor y el salón para el horario ingresado. 
+        #Si al menos uno no se cumple, no se agrega el grupo
+        for hor in horario:
+            dispProfesor = profesor.getHorario().comprobarDisponibilidad[hor]
+            dispSalon = salon.getHorario().comprobarDisponibilidad[hor]
+            
+            if not dispProfesor or not dispSalon:
+                break
+        
+        #En caso de contar con disponibilidad, se procede a declarar el nuevo grupo y 
+        #agregárselo a su respectiva materia, profesor y salón
+        if dispProfesor and dispSalon and daMateria:
+            nGrupo = self.crearGrupo(self, numero, profesor, horario, cupos, salon)
+            self._cupos += cupos
+            salon.getHorario().ocuparHorario(self, horario, nGrupo) 
+            profesor.vincularGrupo(self, nGrupo)  
+    
+    #Metodo que retorna el grupo de un estudiante en especifico
+    def buscarGrupoDeEstudiante(self, estudiante):
+        for grupo in self._grupos:
+            for e in grupo.getEstudiantes():
+                if e == estudiante:
+                    return grupo
+        return None
+    
+    @staticmethod
+    def buscarMateria(self, nombre, codigo):
+        for i, materia in enumerate(Materia.materiasTotales):
+            if materia.getNombre() == nombre and materia.getCodigo() == codigo:
+                return i
+        return -1
     
     
