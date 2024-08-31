@@ -140,4 +140,29 @@ class Materia:
         
         return True
     
-    
+    #Metodo que separa el nombre de la materia entre las palabras que lo componen si tiene mas de 13 caracteres,
+    #luego cada palabra queda con los 3 primero caracteres que se tengan
+    def hacerAbreviatura(self, nombre):
+        abreviatura = ""
+        
+        if len(nombre) <= 13:
+            self.abreviatura = nombre
+        else:
+            palabras = nombre.split()
+            for palabra in palabras:
+                if len(palabra) >= 3:
+                    abreviatura += palabra[:3] + " "
+                else:
+                    abreviatura += palabra + " "
+            
+            if len(abreviatura) <= 13:
+                self.abreviatura = abreviatura.strip()
+            else:
+                self.abreviatura = abreviatura[:13]
+                
+    def mostrarGrupos(self):
+        retorno = ""
+        i = 1
+        for grupo in self._grupos:
+            retorno += i++ + ". " + grupo.getNumero() + ".\n"
+        return retorno
