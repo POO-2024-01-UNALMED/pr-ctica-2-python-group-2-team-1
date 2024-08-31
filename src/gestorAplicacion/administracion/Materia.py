@@ -95,11 +95,49 @@ class Materia:
                     return grupo
         return None
     
+    #Busca una materia, teniendo en cuenta su nombre y su codigo.
+    #Si no existe, retorna -1
     @staticmethod
     def buscarMateria(self, nombre, codigo):
         for i, materia in enumerate(Materia.materiasTotales):
             if materia.getNombre() == nombre and materia.getCodigo() == codigo:
                 return i
         return -1
+    
+    #Comprueba si un estudiante puede estar en un grupo, dependiendo de los cupos, creditos, prerrequisitos y disponibilidad
+    @staticmethod
+    def puedeVerMateria(self, estudiante, grupo):
+        
+        if not (estudiante.getCreditos() + grupo.getMateria().getCreditos() <= self.Coordinador.getLimitesCreaditos):
+            return False
+        
+        if not estudiante.getHorario().comprobarDisponibilidad(grupo.getHorario):
+            return False
+        
+        if grupo.getCupos() == 0:
+            return False
+        
+        if not self.comprobarPrerrequisitos(estudiante, grupo.getMateria()):
+            return False
+        
+        return True
+    
+    @staticmethod
+    def comprobarPrerrequisitos(self, estudiante, materia):
+        materiasVistas = []
+        for pGrupo in estudiante.getGruposVistos():
+            materiasVistas.append(pGrupo.getMateria())
+        
+        for pMateria in materia.getPrerrequisitos():
+            flag = False
+            for pVistas in materiasVistas:
+                if pMateria.getCodigo() == pVistas.getCodigo():
+                    flag = True
+                    break
+            
+            if not flag:
+                return False
+        
+        return True
     
     
