@@ -19,7 +19,17 @@ class Materia:
     #Metodos
     def cantidadCupos(self):
         cantidad = 0
-        for grupo in self.get_grupos():
-            cantidad += grupo.get_cupos()
+        for grupo in self.getGrupos():
+            cantidad += grupo.getCupos()
         return cantidad
-        
+    
+    #Este es un metodo de instacia el cual crea nuevos grupos con los parametros que se proporcionen.
+    #Devolviendo asi el grupo generado.
+    
+    def crearGrupo(self, numero, profesor, horario, cupos, salon):
+        grupo = Grupo(self, numero, profesor, horario, cupos, salon)
+        self.cantidadCupos()
+        self.grupos.append(grupo)
+        return grupo 
+    
+    

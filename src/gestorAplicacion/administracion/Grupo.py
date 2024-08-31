@@ -15,17 +15,17 @@ class Grupo:
         Grupo.gruposTotales.append(self)
         
     #Metodos    
-    def mostrar_informacion_grupo(self):
+    def mostrarInformacionGrupo(self):
         retorno = f'Número del grupo: {self.numero}, Profesor: {self.profesor}, Horario: {self.horario}, Cupos: {self.cupos}, Salon: {self.salon}'
         return retorno
     
-    def existencia_estudiante(self, estudiante):
+    def existenciaEstudiante(self, estudiante):
         for est in self.estudiantes:
             if est.getId() == estudiante.getId():
                 return True
         return False
     
-    def eliminar_estudiante(self, estudiante):
+    def eliminarEstudiante(self, estudiante):
         indice = -1
         for i, est in enumerate(self.estudiante):
             #Enumerate usado para obtener tanto el indice como el valor de cada elemento
@@ -38,7 +38,7 @@ class Grupo:
             self.estudiantes.pop(indice)
     
     @staticmethod
-    def buscar_grupo(materiaE, grupoE):
+    def buscarGrupo(materiaE, grupoE):
         indicei = -1
         indicej = -1
 
@@ -54,7 +54,7 @@ class Grupo:
         
         return Materia.getMateriasTotales()[indicei].getGrupos()[indicej]
     
-    def agregar_estudiantes(self, estudiante):
+    def agregarEstudiantes(self, estudiante):
         self.estudiantes.append(estudiante)
         self.cupos -= 1
         
