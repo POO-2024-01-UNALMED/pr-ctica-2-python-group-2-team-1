@@ -32,4 +32,26 @@ class Materia:
         self.grupos.append(grupo)
         return grupo 
     
+    #Este metodo muestra más informacion acerca de la materia
+    def mostrarContenidos(self):
+        contenido = f"Materia: {self._nombre}, 
+                    \nCodigo: {self._codigo},
+                    \nCreditos: {self._creditos},
+                    \nFacultad: {self._facultad},
+                    \nDescripcion: \n {self._descripcion}" #Esto deberia de funcionar, supongo.
+        return contenido  
+    
+    #Este metodo afirma si existe el grupo que se busca
+    def existenciaGrupo(self, grupoBuscado):
+        if self.grupos: #Para usar algo similar a 'isEmpty' usamos self para verificar si la lista existe.
+            for grupo in self.grupos:
+                if grupo == grupoBuscado:
+                    return True
+            return False
+        else:
+            return False
+
+    
+        
+    
     
