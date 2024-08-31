@@ -27,6 +27,7 @@ class Grupo:
     def eliminar_estudiante(self, estudiante):
         indice = -1
         for i, est in enumerate(self.estudiante):
+            #Enumerate usado para obtener tanto el indice como el valor de cada elemento
             if est.get_nombre() == estudiante.get_nombre():
                 indice = i
                 self.cupos += 1
@@ -56,3 +57,45 @@ class Grupo:
         self.estudiantes.append(estudiante)
         self.cupos -= 1
         
+    def getNumero(self):
+        return self.numero
+    
+    def setNumero(self, numero): 
+	    self.numero = numero
+    
+    def setProfesor(self, profesor):
+        self.profesor = profesor
+    
+    def getHorario(self):
+        return self.horario
+    
+    def setHorario(self, horario):
+        self.horario = horario
+    
+    def getCupos(self):
+        return self.cupos
+    
+    def setCupos(self, cupos):
+        self.cupos = cupos
+    
+    def getSalon(self):
+        return self.salon
+    
+    def setSalon(self, salon):
+        self.salon = salon
+    
+    def getEstudiantes(self):
+        return self.estudiantes
+    
+    def setEstudiantes(self, estudiantes):
+        self.estudiantes = estudiantes
+        
+    def getMateria(self):
+        return self.materia
+    
+    def setMateria(self, materia):
+        self.materia = materia
+    
+    @staticmethod
+    def getGruposTotales():
+        return Grupo.grupos_totales
