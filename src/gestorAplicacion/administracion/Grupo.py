@@ -34,3 +34,25 @@ class Grupo:
                 break
         if indice != -1:
             self.estudiantes.pop(indice)
+    
+    @staticmethod
+    def buscar_grupo(materiaE, grupoE):
+        indicei = -1
+        indicej = -1
+
+        for i, materia in enumerate(Materia.get_materias_totales()):
+            if materia.get_nombre() == materiaE.get_nombre():
+                indicei = i
+                
+                for j, grupo in enumerate(materia.get_grupos()):
+                    if grupo.get_numero() == grupoE.get_numero():
+                        indice = j
+                        break
+                break
+        
+        return Materia.get_materias_totales()[indicei].get_grupos()[indicej]
+    
+    def agregar_estudiantes(self, estudiante):
+        self.estudiantes.append(estudiante)
+        self.cupos -= 1
+        
