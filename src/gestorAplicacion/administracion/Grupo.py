@@ -2,7 +2,7 @@ import gestorAplicacion.administracion
 from gestorAplicacion.usuario import *
 
 class Grupo:
-    grupos_totales = []
+    gruposTotales = []
     
     def __init__(self, materia, numero, profesor, horario = None, cupos = None, salon = None):
         self.materia = materia
@@ -12,8 +12,9 @@ class Grupo:
         self.cupos = cupos
         self.salon = salon
         self.estudiantes = []
-        Grupo.grupos_totales.append(self)
+        Grupo.gruposTotales.append(self)
         
+    #Metodos    
     def mostrar_informacion_grupo(self):
         retorno = f'Número del grupo: {self.numero}, Profesor: {self.profesor}, Horario: {self.horario}, Cupos: {self.cupos}, Salon: {self.salon}'
         return retorno
@@ -101,4 +102,4 @@ class Grupo:
     
     @staticmethod
     def getGruposTotales():
-        return Grupo.grupos_totales
+        return Grupo.gruposTotales
