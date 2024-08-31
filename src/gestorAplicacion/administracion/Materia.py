@@ -16,5 +16,10 @@ class Materia:
         
         Materia.materiasTotales.append(self)
         
-        
+    #Metodos
+    def cantidadCupos(self):
+        cantidad = 0
+        for grupo in self.get_grupos():
+            cantidad += grupo.get_cupos()
+        return cantidad
         

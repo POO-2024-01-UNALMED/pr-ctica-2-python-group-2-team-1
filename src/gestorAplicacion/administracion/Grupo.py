@@ -21,7 +21,7 @@ class Grupo:
     
     def existencia_estudiante(self, estudiante):
         for est in self.estudiantes:
-            if est.get_id() == estudiante.get_id():
+            if est.getId() == estudiante.getId():
                 return True
         return False
     
@@ -29,10 +29,10 @@ class Grupo:
         indice = -1
         for i, est in enumerate(self.estudiante):
             #Enumerate usado para obtener tanto el indice como el valor de cada elemento
-            if est.get_nombre() == estudiante.get_nombre():
+            if est.getNombre() == estudiante.getNombre():
                 indice = i
                 self.cupos += 1
-                estudiante.eliminar_grupo(self)
+                estudiante.eliminarGrupo(self)
                 break
         if indice != -1:
             self.estudiantes.pop(indice)
@@ -42,17 +42,17 @@ class Grupo:
         indicei = -1
         indicej = -1
 
-        for i, materia in enumerate(Materia.get_materias_totales()):
-            if materia.get_nombre() == materiaE.get_nombre():
+        for i, materia in enumerate(Materia.getMateriasTotales()):
+            if materia.getNombre() == materiaE.getNombre():
                 indicei = i
                 
-                for j, grupo in enumerate(materia.get_grupos()):
-                    if grupo.get_numero() == grupoE.get_numero():
+                for j, grupo in enumerate(materia.getGrupos()):
+                    if grupo.getNumero() == grupoE.getNumero():
                         indice = j
                         break
                 break
         
-        return Materia.get_materias_totales()[indicei].get_grupos()[indicej]
+        return Materia.getMateriasTotales()[indicei].getGrupos()[indicej]
     
     def agregar_estudiantes(self, estudiante):
         self.estudiantes.append(estudiante)
