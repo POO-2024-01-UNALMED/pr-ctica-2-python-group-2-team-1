@@ -51,7 +51,16 @@ class Materia:
         else:
             return False
 
-    
+    def eliminarGrupo(self, numero):
+        grupo = self._grupos[numero - 1]
+        grupo.getProfesor().desvincularGrupo(grupo)
+        grupo.getSalon().getHorario().liberarHorario(grupo.getHorario)
+        self.grupos.remove(grupo)
+        self._cupos -= grupo.getCupos()
+        for i in range(numero - 1, len(self._grupos)):
+            grupoCamb = self.grupos[i]
+            nGrupoAnt = grupoCamb.getNumero()
+            grupoCamb.setNumero(nGrupoAnt - 1)
         
     
     
