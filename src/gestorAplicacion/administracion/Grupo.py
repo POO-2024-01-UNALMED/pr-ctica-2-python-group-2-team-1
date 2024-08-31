@@ -60,8 +60,11 @@ class Grupo:
     def getNumero(self):
         return self.numero
     
-    def setNumero(self, numero): 
-	    self.numero = numero
+    def setNumero(self, numero):
+        self.numero = numero
+    
+    def getProfesor(self):
+        return self.profesor
     
     def setProfesor(self, profesor):
         self.profesor = profesor
