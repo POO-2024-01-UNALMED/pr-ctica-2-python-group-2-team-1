@@ -1,5 +1,5 @@
 from gestorAplicacion.administracion.Grupo import Grupo
-from excepciones.ErrorManejo import *
+#from excepciones.ErrorManejo import *
 # from Salon import Salon
 
 
@@ -182,7 +182,7 @@ class Materia:
             salon.getHorario().ocuparHorario(nGrupo, horario)
             profesor.vincularGrupo(nGrupo)
         else:
-            raise GrupoNoAgregado()
+            raise GrupoNoAgregado() 
 
     def agregarGrupoHecho(self, grupoHecho):
         self.grupos.append(grupoHecho)
