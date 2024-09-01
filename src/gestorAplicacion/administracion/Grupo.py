@@ -1,8 +1,4 @@
-# Autores:
-#  MATEO ÁLVAREZ MURILLO
-#  EFRAÍN GÓMEZ RAMÍREZ
-#  LIBARDO JOSÉ NAVARRO PEDROZO
-#  SEBASTIÁN OCAMPO GALVIS
+
 # from gestorAplicacion.usuario.Estudiante import Estudiante
 # from Salon import Salon
 
