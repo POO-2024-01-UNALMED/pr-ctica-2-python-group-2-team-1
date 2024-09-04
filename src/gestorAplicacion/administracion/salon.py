@@ -1,43 +1,69 @@
+from gestorAplicacion.administracion.Horario import Horario
+
+
 class Salon:
-    salones = []  # Lista estática para almacenar todos los salones
+    _salones = []
 
     def __init__(self, lugar, aforo):
-        self.lugar = lugar
-        self.aforo = aforo
-        self.horario = horario()  # Asumimos que la clase Horario está definida en algún lugar
-        Salon.salones.append(self)
+        self._lugar = lugar
+        self._aforo = aforo
+        self._horario = Horario()  # no estoy seguro de como hacer eso aca
+        Salon._salones.append(self)
 
-    @staticmethod
-    def mostrar_salones():
-        # Método estático para mostrar los salones
+    # METODOS
+
+    @classmethod
+    def mostrarSalones(cls):
         retorno = ""
-        for i, salon in enumerate(Salon.salones, start=1):
-            retorno += f"{i}. {salon.lugar}.\n"
+        i = 1
+        for salon in Salon._salones:
+            i += 1
+            retorno += str(i) + ". " + salon._lugar + ".\n"
         return retorno
+    
+    @classmethod
+    def nombresSalones(cls):
+        nombres = []
+        for salon in Salon._salones:
+            nombres.append(salon.getLugar())
+        return nombres
+    
+    @classmethod
+    def encontrarSalon(cls, salon):
+        for s in Salon._salones:
+            if s.getLugar()==salon:
+                return s
 
-    # Métodos getter y setter
-    def get_lugar(self):
-        return self.lugar
+    # Setters y Getters
 
-    def set_lugar(self, lugar):
-        self.lugar = lugar
+    def getLugar(self):
+        return self._lugar
 
-    def get_aforo(self):
-        return self.aforo
+    def setLugar(self, lugar):
+        self._lugar = lugar
 
-    def set_aforo(self, aforo):
-        self.aforo = aforo
+    def getAforo(self):
+        return self._aforo
 
-    def get_horario(self):
-        return self.horario
+    def setLugar(self, aforo):
+        self._aforo = aforo
 
-    def set_horario(self, horario):
-        self.horario = horario
+    def getLugar(self):
+        return self._lugar
 
-    @staticmethod
-    def get_salones():
-        return Salon.salones
+    def setLugar(self, lugar):
+        self._lugar = lugar
 
-    @staticmethod
-    def set_salones(salones):
-        Salon.salones = salones
+    def getHorario(self):
+        return self._horario
+
+    def setHorario(self, horario):
+        self._horario = horario
+
+    @classmethod
+    def getSalones(cls):
+        return cls._salones
+
+    @classmethod
+    def setSalones(cls, salones):
+        cls._salones = salones
