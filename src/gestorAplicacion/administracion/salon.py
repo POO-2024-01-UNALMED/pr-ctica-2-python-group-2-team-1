@@ -7,7 +7,7 @@ class Salon:
     def __init__(self, lugar, aforo):
         self._lugar = lugar
         self._aforo = aforo
-        self._horario = Horario()  # no estoy seguro de como hacer eso aca
+        self._horario = Horario()  
         Salon._salones.append(self)
 
     # METODOS
