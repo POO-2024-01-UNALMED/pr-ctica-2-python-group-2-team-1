@@ -1,9 +1,3 @@
-# Autores:
-#   EFRAÍN GÓMEZ RAMÍREZ
-#   LIBARDO JOSÉ NAVARRO PEDROZO
-#   SEBASTIÁN OCAMPO GALVIS
-#   MATEO ÁLVAREZ MURILLO
-
 from enum import Enum
 
 
