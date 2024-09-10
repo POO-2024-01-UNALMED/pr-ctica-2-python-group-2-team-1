@@ -1,3 +1,4 @@
+#aqui se importan las clases que se van a deserializar
 from gestorAplicacion.administracion.Beca import Beca
 from gestorAplicacion.administracion.Grupo import Grupo
 from gestorAplicacion.administracion.Horario import Horario
