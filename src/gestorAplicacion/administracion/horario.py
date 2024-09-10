@@ -165,3 +165,4 @@ class Horario:
     @classmethod
     def setHorariosTotales(cls, horarios):
         cls._horariosTotales = horarios
+#clase horario
