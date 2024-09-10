@@ -1,3 +1,4 @@
+#Juan Miguel Ochoa
 from gestorAplicacion.administracion.Horario import Horario
 from gestorAplicacion.administracion.Materia import Materia
 from gestorAplicacion.usuario.Estudiante import Estudiante
