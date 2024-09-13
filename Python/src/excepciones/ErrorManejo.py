@@ -3,7 +3,6 @@ from excepciones.ErrorAplicacion import ErrorAplicacion
 class ErrorManejo(ErrorAplicacion):
     def __init__(self, error):
         super().__init__(error)
-
 class CampoVacio(ErrorManejo):
     def __init__(self):
         super().__init__("Los campos del formulario no fueron llenados")
