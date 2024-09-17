@@ -1,3 +1,5 @@
+    #Juan Miguel Ochoa/Sebastian Martinez/David Posada/Juan Diego Sanchez/Daniel Zambrano
+
 from gestorAplicacion.usuario.Estudiante import Estudiante
 from gestorAplicacion.usuario.Coordinador import Coordinador
 from gestorAplicacion.administracion.Horario import Horario

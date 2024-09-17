@@ -1,3 +1,5 @@
+#Juan Miguel Ochoa/Sebastian Martinez/David Posada/Juan Diego Sanchez/Daniel Zambrano
+
 from tkinter import *
 from gestorGrafico.ventInicio import VentInicio
 from gestorGrafico.ventLog import VentLog

@@ -1,4 +1,4 @@
-#Juan Miguel Ochoa
+#Juan Miguel Ochoa/Sebastian Martinez/David Posada/Juan Diego Sanchez/Daniel Zambrano
 from tkinter import *
 from tkinter import messagebox
 from gestorGrafico.DesmatricularAlumno import DesmatricularAlumno

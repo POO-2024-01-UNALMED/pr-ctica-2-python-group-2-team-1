@@ -1,3 +1,5 @@
+#Juan Miguel Ochoa/Sebastian Martinez/David Posada/Juan Diego Sanchez/Daniel Zambrano
+
 from excepciones.ErrorAplicacion import ErrorAplicacion
 
 class ErrorManejo(ErrorAplicacion):
