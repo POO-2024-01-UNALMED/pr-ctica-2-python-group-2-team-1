@@ -74,7 +74,7 @@ class VentInicio(Frame):
         
         biblioTexto = Label(p5Frame, text=bibi1, font=("Arial", 10), bg="#F5E6C4", wraplength=405, highlightbackground="#8B5A2B", highlightthickness=2)
         biblioTexto.pack(expand=True, fill="both")
-        biblioTexto.bind("<Button-1>", cambiarTextoEImagenF6)
+        biblioTexto.bind("<Button-1>", cambiarTextoEImagenF6) # Evento de click izquierdo
 
         # Frame 6 Imágenes
         def setCuatroImagenes(packImagenes):
@@ -129,7 +129,7 @@ class VentInicio(Frame):
                  wraplength=160, borderwidth=4, relief="solid",)
 
         ImagenF4.pack(side="top",pady=3)
-        ImagenF4.bind("<Enter>",cambiarTextoEImagenF4)
+        ImagenF4.bind("<Enter>",cambiarTextoEImagenF4)  # Evento de pasar el mouse por encima
         
         # Texto descripcion
         
