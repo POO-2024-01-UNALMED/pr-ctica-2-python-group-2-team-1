@@ -66,6 +66,7 @@ class RecoleccionDat(Frame):
             else:
                 bontonFiltro.config(state="normal")
 
+        ##readonly
         valorDefe = StringVar(value="Elegir Filtro")
         combo = ttk.Combobox(MidIzq, textvariable=valorDefe, values=["Facultad", "Créditos", "Código", "Ninguno"], state="readonly")
         combo.bind("<<ComboboxSelected>>", chanOpc)
