@@ -54,10 +54,10 @@ class VentInicio(Frame):
             evento.widget["text"] = self.biblios[i]
             
             # Cambio de imágenes
-            imag1 = PhotoImage(file="/Users/user/Desktop/Practica2-grupo2-equipo1/Python/src/gestorGrafico/Imagenes/imgIn{0}_1.png".format(i+1))     
-            imag2 = PhotoImage(file="/Users/user/Desktop/Practica2-grupo2-equipo1/Python/src/gestorGrafico/Imagenes/imgIn{0}_2.png".format(i+1))     
-            imag3 = PhotoImage(file="/Users/user/Desktop/Practica2-grupo2-equipo1/Python/src/gestorGrafico/Imagenes/imgIn{0}_3.png".format(i+1))     
-            imag4 = PhotoImage(file="/Users/user/Desktop/Practica2-grupo2-equipo1/Python/src/gestorGrafico/Imagenes/imgIn{0}_4.png".format(i+1))     
+            imag1 = PhotoImage(file="Python/src/gestorGrafico/Imagenes/imgIn{0}_1.png".format(i+1))     
+            imag2 = PhotoImage(file="Python/src/gestorGrafico/Imagenes/imgIn{0}_2.png".format(i+1))     
+            imag3 = PhotoImage(file="Python/src/gestorGrafico/Imagenes/imgIn{0}_3.png".format(i+1))     
+            imag4 = PhotoImage(file="Python/src/gestorGrafico/Imagenes/imgIn{0}_4.png".format(i+1))     
             
             global lisImagenes  # Es global para no perder el puntero de las imágenes cuando el método finalice
             lisImagenes = [imag1, imag2, imag3, imag4]
@@ -85,10 +85,10 @@ class VentInicio(Frame):
 
         tam = 157
         
-        self.image1 = PhotoImage(file="/Users/user/Desktop/Practica2-grupo2-equipo1/Python/src/gestorGrafico/Imagenes/imgln1_1.png")
-        self.image2 = PhotoImage(file="/Users/user/Desktop/Practica2-grupo2-equipo1/Python/src/gestorGrafico/Imagenes/imgln1_2.png")
-        self.image3 = PhotoImage(file="/Users/user/Desktop/Practica2-grupo2-equipo1/Python/src/gestorGrafico/Imagenes/imgln1_3.png")
-        self.image4 = PhotoImage(file="/Users/user/Desktop/Practica2-grupo2-equipo1/Python/src/gestorGrafico/Imagenes/imgln1_4.png")
+        self.image1 = PhotoImage(file="Python/src/gestorGrafico/Imagenes/imgln1_1.png")
+        self.image2 = PhotoImage(file="Python/src/gestorGrafico/Imagenes/imgln1_2.png")
+        self.image3 = PhotoImage(file="Python/src/gestorGrafico/Imagenes/imgln1_3.png")
+        self.image4 = PhotoImage(file="Python/src/gestorGrafico/Imagenes/imgln1_4.png")
 
         img1 = Label(p6Frame, image=self.image1, height=tam, width=tam)
         img1.grid(row=0, column=0, columnspan=1, rowspan=1, padx=3, pady=3)
@@ -111,7 +111,7 @@ class VentInicio(Frame):
 
             # Cambio de imágenes
             global imagF4
-            imagF4 = PhotoImage(file="/Users/user/Desktop/Practica2-grupo2-equipo1/Python/src/gestorGrafico/Imagenes/imgInF4.{0}.png".format(i))     
+            imagF4 = PhotoImage(file="Python/src/gestorGrafico/Imagenes/imgInF4.{0}.png".format(i))     
    
             ImagenF4.config(image=imagF4)
             
@@ -123,7 +123,7 @@ class VentInicio(Frame):
             else:
                 self.punteroImagen = i
         
-        self.imagenF41 = PhotoImage(file="/Users/user/Desktop/Practica2-grupo2-equipo1/Python/src/gestorGrafico/Imagenes/imgInF4.1.png")
+        self.imagenF41 = PhotoImage(file="Python/src/gestorGrafico/Imagenes/imgInF4.1.png")
         #ajuste al marco que no servia para nada
         ImagenF4 = Label(p4Frame, image=self.imagenF41, width=300,
                  wraplength=160, borderwidth=4, relief="solid",)

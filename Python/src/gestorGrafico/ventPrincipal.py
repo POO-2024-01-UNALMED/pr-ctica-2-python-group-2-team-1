@@ -16,7 +16,7 @@ class VentPrincipal(Tk):
         self.geometry("865x480")
         self.configure(bg="#FAF3E0")  # Fondo claro de tonalidad café
         self.pack_propagate(False)
-        self.iconbitmap("/Users/user/Desktop/Practica2-grupo2-equipo1/Python/src/gestorGrafico/Imagenes/icono.ico")
+        self.iconbitmap("Python/src/gestorGrafico/Imagenes/imgVentPrincipal.png")
 
         def infoBasica():
             texto = """Bienvenido a nuestra aplicación de Matrícula de Materias.
@@ -130,7 +130,7 @@ Estamos comprometidos con brindarte una experiencia fácil de usar y confiable. 
 
 
  
-        self.imagen = PhotoImage(file="/Users/user/Desktop/Practica2-grupo2-equipo1/Python/src/gestorGrafico/Imagenes/imgVentPrincipal.png")
+        self.imagen = PhotoImage(file="Python/src/gestorGrafico/Imagenes/imgVentPrincipal.png")
         figura = Label(frame,height=108,width=192,image=self.imagen)
         figura.pack(anchor="center")
 
