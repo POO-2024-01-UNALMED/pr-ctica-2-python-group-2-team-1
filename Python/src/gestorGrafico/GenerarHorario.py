@@ -52,6 +52,7 @@ class RecoleccionDat(Frame):
                 eleccionFil.config(state="normal")
                 valorElecc.set("")
             else:
+                #no editable
                 combo2.config(values=listaNombresMaterias)
                 bontonFiltro.config(state="disabled")
                 eleccionFil.config(state="disabled")
